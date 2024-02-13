@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rekisteröitymislomake</title>
+<style>
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  label {
+    margin-bottom: 10px;
+    text-align: left;  
+
+  }
+  input[type="text"], select, textarea {
+    margin-bottom: 10px;
+    width: 20%; /* Voit säätää leveyttä tarpeen mukaan */
+  }
+  fieldset {
+    margin-bottom: 10px;
+    width: 20%; /* Voit säätää leveyttä tarpeen mukaan */
+  }
+  #error-message {
+    color: red;
+    margin-top: 10px;
+
+  }
+  button[type="submit"] {
+    width: 20%;
+  }
+
+</style>
+</head>
+<body>
+
+<h1>Rekisteröitymislomake</h1>
+<h2>Siirry kentästä toiseen tab-näppäimellä.</h2>
+
+<form id="registration-form">
+  <label for="username">KäyttäjäID:</label>
+  <input type="text" id="username" name="username">
+
+  <label for="password">Salasana:</label>
+  <input type="text" id="password" name="password">
+
+  <label for="name">Nimi:</label>
+  <input type="text" id="name" name="name">
+
+  <label for="address">Osoite:</label>
+  <input type="text" id="address" name="address">
+
+  <label for="country">Maa:</label>
+  <select id="country" name="country">
+    <option value="">Valitse maa</option>
+    <option value="Switzerland">Sveitsi</option>
+    <option value="Other">Muu</option>
+  </select>
+
+  <label for="zipcode">Postinumero:</label>
+  <input type="text" id="zipcode" name="zipcode">
+
+  <label for="email">Sähköposti:</label>
+  <input type="text" id="email" name="email">
+
+  <fieldset>
+    <legend>Sukupuoli:</legend>
+    <label for="male">Mies</label>
+    <input type="radio" id="male" name="gender" value="male">
+    <label for="female">Nainen</label>
+    <input type="radio" id="female" name="gender" value="female">
+  </fieldset>
+
+  <fieldset>
+    <legend>Kieli:</legend>
+    <label for="finnish">Suomi</label>
+    <input type="checkbox" id="finnish" name="language" value="finnish">
+    <label for="other-language">Muu kuin suomi</label>
+    <input type="checkbox" id="other-language" name="language" value="other-language">
+  </fieldset>
+
+  <label for="additional-info">Lisätietoja:</label>
+  <textarea id="additional-info" name="additional-info"></textarea>
+
+  <div id="error-message"></div>
+
+  <button type="submit">Rekisteröidy</button>
+</form>
+
+<script src="script.js"></script>
+
+</body>
+</html>
